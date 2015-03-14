@@ -1,0 +1,23 @@
+{
+  "name": "buspass",
+  "version": "0.0.0",
+  "authors": [
+    "naruhodo-ryuichi"
+  ],
+  "license": "Affero",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "core-component-page": "Polymer/core-component-page#^0.5",
+    "core-icons": "Polymer/core-icons#^0.5",
+    "platform": "Polymer/platform#^0.3.0",
+    "x-tag-calendar": "x-tag/calendar#~0.1.8",
+    "core-resizable": "Polymer/core-resizable#^0.5"
+  }
+}

@@ -1,0 +1,1244 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/*
+ * -- BASE STYLES --
+ * Most of these are inherited from Base, but I want to change a few.
+ */
+body {
+    line-height: 1.7em;
+    color: #ffffff;
+    font-size: 13px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+label {
+    color: #34495e;
+}
+
+.pure-img-responsive {
+    max-width: 100%;
+    height: auto;
+}
+
+/*
+ * -- LAYOUT STYLES --
+ * These are some useful classes which I will need
+ */
+.l-box {
+    padding: 1em;
+}
+
+.l-box-lrg {
+    padding: 2em;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.is-center {
+    text-align: center;
+}
+
+
+
+/*
+ * -- PURE FORM STYLES --
+ * Style the form inputs and labels
+ */
+.pure-form label {
+    margin: 1em 0 0;
+    font-weight: bold;
+    font-size: 100%;
+}
+
+.pure-form input[type] {
+    border: 2px solid #ddd;
+    box-shadow: none;
+    font-size: 100%;
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+/*
+ * -- PURE BUTTON STYLES --
+ * I want my pure-button elements to look a little different
+ */
+.pure-button {
+    background-color: #1f8dd6;
+    color: white;
+    padding: 0.5em 2em;
+    border-radius: 5px;
+}
+
+a.pure-button-primary {
+    background: white;
+    color: #1f8dd6;
+    border-radius: 5px;
+    font-size: 120%;
+}
+
+
+/*
+ * -- MENU STYLES --
+ * I want to customize how my .pure-menu looks at the top of the page
+ */
+
+.home-menu {
+    padding: 0.5em;
+    text-align: center;
+    box-shadow: 0 1px 1px rgba(0,0,0, 0.10);
+}
+.home-menu {
+    background: #2d3e50;
+}
+.pure-menu.pure-menu-fixed {
+    /* Fixed menus normally have a border at the bottom. */
+    border-bottom: none;
+    /* I need a higher z-index here because of the scroll-over effect. */
+    z-index: 4;
+}
+
+.home-menu .pure-menu-heading {
+    color: white;
+    font-weight: 400;
+    font-size: 120%;
+}
+
+.home-menu .pure-menu-selected a {
+    color: white;
+}
+
+.home-menu a {
+    color: #6FBEF3;
+}
+.home-menu li a:hover,
+.home-menu li a:focus {
+    background: none;
+    border: none;
+    color: #AECFE5;
+}
+
+
+/*
+ * -- SPLASH STYLES --
+ * This is the blue top section that appears on the page.
+ */
+
+.splash-container {
+    background: #1f8dd6;
+    z-index: 1;
+    overflow: hidden;
+    /* The following styles are required for the "scroll-over" effect */
+    width: 100%;
+    height: 88%;
+    top: 0;
+    left: 0;
+    position: fixed !important;
+}
+
+.splash {
+    /* absolute center .splash within .splash-container */
+    width: 80%;
+    height: 50%;
+    margin: auto;
+    position: absolute;
+    top: 100px; left: 0; bottom: 0; right: 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* This is the main heading that appears on the blue section */
+.splash-head {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    border: 3px solid white;
+    padding: 1em 1.6em;
+    font-weight: 100;
+    border-radius: 5px;
+    line-height: 1em;
+}
+
+/* This is the subheading that appears on the blue section */
+.splash-subhead {
+    color: white;
+    letter-spacing: 0.05em;
+    opacity: 0.8;
+}
+
+/*
+ * -- CONTENT STYLES --
+ * This represents the content area (everything below the blue section)
+ */
+.content-wrapper {
+    /* These styles are required for the "scroll-over" effect */
+    position: absolute;
+    top: 0%;
+    width: 100%;
+    min-height: 12%;
+    z-index: 2;
+    background: #000000;
+
+}
+
+/* This is the class used for the main content headers (<h2>) */
+.content-head {
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 2em 0 1em;
+}
+
+/* This is a modifier class used when the content-head is inside a ribbon */
+.content-head-ribbon {
+    color: white;
+}
+
+/* This is the class used for the content sub-headers (<h3>) */
+.content-subhead {
+    color: #1f8dd6;
+}
+.content-subhead i {
+    margin-right: 7px;
+}
+
+/* This is the class used for the dark-background areas. */
+.ribbon {
+    background: #2d3e50;
+    color: #aaa;
+}
+
+/* This is the class used for the footer */
+.footer {
+    background: #111;
+}
+
+/*
+ * -- TABLET (AND UP) MEDIA QUERIES --
+ * On tablets and other medium-sized devices, we want to customize some
+ * of the mobile styles.
+ */
+@media (min-width: 48em) {
+
+    /* We increase the body font size */
+    body {
+        font-size: 16px;
+    }
+    /* We want to give the content area some more padding */
+    .content {
+        padding: 1em;
+    }
+
+    /* We can align the menu header to the left, but float the
+    menu items to the right. */
+    .home-menu {
+        text-align: left;
+    }
+    .home-menu ul {
+        float: right;
+    }
+
+    /* We increase the height of the splash-container */
+    /*    .splash-container {
+            height: 500px;
+        }*/
+
+    /* We decrease the width of the .splash, since we have more width
+    to work with */
+    .splash {
+        width: 50%;
+        height: 50%;
+    }
+
+    .splash-head {
+        font-size: 250%;
+    }
+
+
+    /* We remove the border-separator assigned to .l-box-lrg */
+    .l-box-lrg {
+        border: none;
+    }
+
+}
+
+/*
+ * -- DESKTOP (AND UP) MEDIA QUERIES --
+ * On desktops and other large devices, we want to over-ride some
+ * of the mobile and tablet styles.
+ */
+@media (min-width: 78em) {
+    /* We increase the header font size even more */
+    .splash-head {
+        font-size: 300%;
+    }
+}
+
+/* from PURE buttons-core.css */
+.skin .button {
+    /* Structure */
+    display: inline-block;
+    *display: inline; /*IE 6/7*/
+    zoom: 1;
+    line-height: normal;
+    white-space: nowrap;
+    vertical-align: baseline;
+    text-align: center;
+    cursor: pointer;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Firefox: Get rid of the inner focus border */
+.skin .button::-moz-focus-inner{
+    padding: 0;
+    border: 0;
+}
+/* end from PURE buttons-core.css */
+/* from PURE buttons.css */
+/*csslint unqualified-attributes:false*/
+
+.skin .button {
+    font-size: 100%;
+    *font-size: 90%; /*IE 6/7 - To reduce IE's oversized button text*/
+    *overflow: visible; /*IE 6/7 - Because of IE's overly large left/right padding on buttons */
+    padding: 0.5em 1.5em 0.5em;
+    color: #fdfdfc; /* rgba not supported (IE 8) */
+    /* color: rgba(0, 0, 0, 0.80); rgba supported */
+    /* *color: #444; IE 6 & 7 */
+    border: 1px solid #5c4b33; /*IE 6/7/8*/
+    border: none rgba(0, 0, 0, 0); /*IE9 + everything else*/
+    background-color: #665338;
+    text-decoration: none;
+    border-radius: 2px;
+    -webkit-font-smoothing: antialiased;
+    /* Transitions */
+    -webkit-transition: 0.1s linear -webkit-box-shadow;
+    -moz-transition: 0.1s linear -moz-box-shadow;
+    -ms-transition: 0.1s linear box-shadow;
+    -o-transition: 0.1s linear box-shadow;
+    transition: 0.1s linear box-shadow;
+}
+
+.skin .button-hover,
+.skin .button:hover {
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#00000000', GradientType=0);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(transparent), color-stop(40%, rgba(0,0,0, 0.05)), to(rgba(0,0,0, 0.05)));
+    background-image: -webkit-linear-gradient(transparent, rgba(0,0,0, 0.05) 40%, rgba(0,0,0, 0.15));
+    background-image: -moz-linear-gradient(top, rgba(0,0,0, 0.05) 0%, rgba(0,0,0, 0.05));
+    background-image: -ms-linear-gradient(transparent, rgba(0,0,0, 0.05) 40%, rgba(0,0,0, 0.15));
+    background-image: -o-linear-gradient(transparent, rgba(0,0,0, 0.05) 40%, rgba(0,0,0, 0.05));
+    background-image: linear-gradient(transparent, rgba(0,0,0, 0.05) 40%, rgba(0,0,0, 0.05));
+}
+
+.skin .button:focus {
+    outline: 0;
+}
+.skin .button-active,
+.skin .button:active {
+    box-shadow: 0 0 0 1px rgba(0,0,0, 0.15) inset, 0 0 6px rgba(0,0,0, 0.20) inset;
+}
+
+.skin .button[disabled],
+.skin .button-disabled,
+.skin .button-disabled:hover,
+.skin .button-disabled:active {
+    border: none;
+    background-image: none;
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+    filter: alpha(opacity=40);
+    -khtml-opacity: 0.40;
+    -moz-opacity: 0.40;
+    opacity: 0.40;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.skin .button-hidden {
+    display: none;
+}
+
+/* Firefox: Get rid of the inner focus border */
+.skin .button::-moz-focus-inner{
+    padding: 0;
+    border: 0;
+}
+
+.skin .button-primary,
+.skin .button-selected,
+.skin a.button-primary,
+.skin a.button-selected {
+    background-color: #3355BA;
+    color: #fbfcfe;
+}
+
+/*! Copyright 2013 Yahoo! Inc. http://yuilibrary.com/license/ */
+/* This page lists core form styles adopted from Normalize.css. */
+/*! Copyright (c) Nicolas Gallagher and Jonathan Neal */
+
+/*! normalize.css v1.1.0 | MIT License | git.io/normalize */
+
+/* This page has Normalize.css form-specific style rules applied to a .yui3-form context */
+
+/* ==========
+Forms Core
+=========*/
+
+
+/*
+ * Corrects margin displayed oddly in IE 6/7.
+ */
+
+.skin .form {
+    margin: 0;
+}
+
+/* Define consistent border, margin, and padding.*/
+
+
+.skin .form fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+}
+
+/*
+ * 1. Corrects color not being inherited in IE 6/7/8/9.
+ * 2. Corrects text not wrapping in Firefox 3.
+ * 3. Corrects alignment displayed oddly in IE 6/7.
+ */
+
+.skin .form legend {
+    border: 0; /* 1 */
+    padding: 0;
+    white-space: normal; /* 2 */
+    *margin-left: -7px; /* 3 */
+}
+
+/*
+ * 1. Corrects font size not being inherited in all browsers.
+ * 2. Addresses margins set differently in IE 6/7, Firefox 3+, Safari 5,
+ *    and Chrome.
+ * 3. Improves appearance and consistency in all browsers.
+ */
+
+.skin .form button,
+.skin .form input,
+.skin .form select,
+.skin .form textarea {
+    font-size: 100%; /* 1 */
+    margin: 0; /* 2 */
+    vertical-align: baseline; /* 3 */
+    *vertical-align: middle; /* 3 */
+}
+
+/*
+ * Addresses Firefox 3+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+
+.skin .form button,
+.skin .form input {
+    line-height: normal;
+}
+
+/*
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Corrects inability to style clickable `input` types in iOS.
+ * 3. Improves usability and consistency of cursor style between image-type
+ *    `input` and others.
+ * 4. Removes inner spacing in IE 7 without affecting normal text inputs.
+ *    Known issue: inner spacing remains in IE 6.
+ */
+
+.skin .form button,
+.skin .form input[type="button"], /* 1 */
+.skin .form input[type="reset"],
+.skin .form input[type="submit"] {
+    -webkit-appearance: button; /* 2 */
+    cursor: pointer; /* 3 */
+    *overflow: visible;  /* 4 */
+}
+
+/*
+ * Re-set default cursor for disabled elements.
+ */
+
+.skin .form button[disabled],
+.skin .form input[disabled] {
+    cursor: default;
+}
+
+/*
+ * 1. Addresses box sizing set to content-box in IE 8/9.
+ * 2. Removes excess padding in IE 8/9.
+ * 3. Removes excess padding in IE 7.
+ *    Known issue: excess padding remains in IE 6.
+ */
+
+.skin .form input[type="checkbox"],
+.skin .form input[type="radio"] {
+    box-sizing: border-box; /* 1 */
+    padding: 0; /* 2 */
+    *height: 13px; /* 3 */
+    *width: 13px; /* 3 */
+}
+
+/*
+ * 1. Addresses `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Addresses `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+
+.skin .form input[type="search"] {
+    -webkit-appearance: textfield; /* 1 */
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box; /* 2 */
+    box-sizing: content-box;
+}
+
+/*
+ * Removes inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+
+.skin .form input[type="search"]::-webkit-search-cancel-button,
+.skin .form input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+/*
+ * Removes inner padding and border in Firefox 3+.
+ */
+
+.skin .form button::-moz-focus-inner,
+.skin .form input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+/*
+ * 1. Removes default vertical scrollbar in IE 6/7/8/9.
+ * 2. Improves readability and alignment in all browsers.
+ */
+
+.skin .form textarea {
+    overflow: auto; /* 1 */
+    vertical-align: top; /* 2 */
+}
+/* ===============  forms-responsive.css =================*/
+@media only screen and (max-width : 480px) {
+    .skin .form button[type="submit"] {
+        margin: 0.7em 0 0;
+    }
+
+    .skin .form input[type="text"],
+    .skin .form input[type="password"],
+    .skin .form input[type="email"],
+    .skin .form input[type="url"],
+    .skin .form input[type="date"],
+    .skin .form input[type="month"],
+    .skin .form input[type="time"],
+    .skin .form input[type="datetime"],
+    .skin .form input[type="datetime-local"],
+    .skin .form input[type="week"],
+    .skin .form input[type="number"],
+    .skin .form input[type="search"],
+    .skin .form input[type="tel"],
+    .skin .form input[type="color"],
+    .skin .form label {
+        margin-bottom: 0.3em;
+        display: block;
+    }
+
+    .skin .group input[type="text"],
+    .skin .group input[type="password"],
+    .skin .group input[type="email"],
+    .skin .group input[type="url"],
+    .skin .group input[type="date"],
+    .skin .group input[type="month"],
+    .skin .group input[type="time"],
+    .skin .group input[type="datetime"],
+    .skin .group input[type="datetime-local"],
+    .skin .group input[type="week"],
+    .skin .group input[type="number"],
+    .skin .group input[type="search"],
+    .skin .group input[type="tel"],
+    .skin .group input[type="color"] {
+        margin-bottom: 0;
+    }
+
+    .skin .form-aligned .control-group label {
+        margin-bottom: 0.3em;
+        text-align: left;
+        display: block;
+        width: 100%;
+    }
+
+    .skin .form-aligned .controls {
+        margin: 1.5em 0 0 0;
+    }
+
+    /* NOTE: help-inline is deprecated. Use .form-message-inline instead. */
+    .skin .form .help-inline,
+    .skin .form-message-inline,
+    .skin .form-message {
+        display: block;
+        font-size: 80%;
+        /* increased bottom padding to make it group with its related input element */
+        padding: 0.2em 0 0.8em;
+    }
+}
+
+/* ===============  forms.css =================================*/
+.skin .form input[type="text"],
+.skin .form input[type="password"],
+.skin .form input[type="email"],
+.skin .form input[type="url"],
+.skin .form input[type="date"],
+.skin .form input[type="month"],
+.skin .form input[type="time"],
+.skin .form input[type="datetime"],
+.skin .form input[type="datetime-local"],
+.skin .form input[type="week"],
+.skin .form input[type="number"],
+.skin .form input[type="search"],
+.skin .form input[type="tel"],
+.skin .form input[type="color"],
+.skin .form select,
+.skin .form textarea {
+    padding: 0.5em 0.6em;
+    display: inline-block;
+    border: 1px solid #e6e6e6;
+    font-size: 0.8em;
+    box-shadow: inset 0 1px 3px #e6e6e6;
+    border-radius: 4px;
+    -webkit-transition: 0.3s linear border;
+    -moz-transition: 0.3s linear border;
+    -ms-transition: 0.3s linear border;
+    -o-transition: 0.3s linear border;
+    transition: 0.3s linear border;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+.skin .form input[type="text"]:focus,
+.skin .form input[type="password"]:focus,
+.skin .form input[type="email"]:focus,
+.skin .form input[type="url"]:focus,
+.skin .form input[type="date"]:focus,
+.skin .form input[type="month"]:focus,
+.skin .form input[type="time"]:focus,
+.skin .form input[type="datetime"]:focus,
+.skin .form input[type="datetime-local"]:focus,
+.skin .form input[type="week"]:focus,
+.skin .form input[type="number"]:focus,
+.skin .form input[type="search"]:focus,
+.skin .form input[type="tel"]:focus,
+.skin .form input[type="color"]:focus,
+.skin .form select:focus,
+.skin .form textarea:focus {
+    outline: 0;
+    outline: thin dotted \9; /* IE6-9 */
+    border-color: #129FEA;
+}
+
+.skin .form input[type="file"]:focus,
+.skin .form input[type="radio"]:focus,
+.skin .form input[type="checkbox"]:focus {
+    outline: thin dotted #333;
+    outline: 1px auto #129FEA;
+}
+.skin .form .checkbox,
+.skin .form .radio {
+    margin: 0.5em 0;
+    display: block;
+}
+.skin .form input[type="text"][disabled],
+.skin .form input[type="password"][disabled],
+.skin .form input[type="email"][disabled],
+.skin .form input[type="url"][disabled],
+.skin .form input[type="date"][disabled],
+.skin .form input[type="month"][disabled],
+.skin .form input[type="time"][disabled],
+.skin .form input[type="datetime"][disabled],
+.skin .form input[type="datetime-local"][disabled],
+.skin .form input[type="week"][disabled],
+.skin .form input[type="number"][disabled],
+.skin .form input[type="search"][disabled],
+.skin .form input[type="tel"][disabled],
+.skin .form input[type="color"][disabled],
+.skin .form select[disabled],
+.skin .form textarea[disabled] {
+    cursor: not-allowed;
+    box-shadow: inset 0 1px 10px #ededed;
+    background-color: #ededed;
+    color: #adadad;
+    border-color: #e6e6e6;
+}
+.skin .form input[readonly],
+.skin .form select[readonly],
+.skin .form textarea[readonly],
+.skin .form input[readonly]:focus,
+.skin .form select[readonly]:focus,
+.skin .form textarea[readonly]:focus {
+    background: #eee; /* menu hover bg color */
+    color: #777; /* menu text color */
+    border-color: #ccc;
+}
+.skin .form input:focus:invalid,
+.skin .form textarea:focus:invalid,
+.skin .form select:focus:invalid {
+    color: #b94a48;
+    border: 1px solid #ee5f5b;
+}
+.skin .form input:focus:invalid:focus,
+.skin .form textarea:focus:invalid:focus,
+.skin .form select:focus:invalid:focus {
+    border-color: #e9322d;
+}
+.skin .form input[type="file"]:focus:invalid:focus,
+.skin .form input[type="radio"]:focus:invalid:focus,
+.skin .form input[type="checkbox"]:focus:invalid:focus {
+    outline-color: #e9322d;
+}
+.skin .form select {
+    border: 1px solid #e6e6e6;
+    background-color: white;
+}
+.skin .form select[multiple] {
+    height: auto;
+}
+.skin .form label {
+    margin: 0.5em 0 0.2em;
+    color: #4f4f4f;
+    font-size:90%;
+}
+.skin .form fieldset {
+    margin: 0;
+    padding: 0.35em 0 0.75em;
+    border: 0;
+}
+.skin .form legend {
+    display: block;
+    width: 100%;
+    padding: 0.3em 0;
+    margin-bottom: 0.3em;
+    font-size: 125%;
+    color: #262626;
+    border-bottom: 1px solid #ededed;
+}
+
+.skin .form-stacked input[type="text"],
+.skin .form-stacked input[type="password"],
+.skin .form-stacked input[type="email"],
+.skin .form-stacked input[type="url"],
+.skin .form-stacked input[type="date"],
+.skin .form-stacked input[type="month"],
+.skin .form-stacked input[type="time"],
+.skin .form-stacked input[type="datetime"],
+.skin .form-stacked input[type="datetime-local"],
+.skin .form-stacked input[type="week"],
+.skin .form-stacked input[type="number"],
+.skin .form-stacked input[type="search"],
+.skin .form-stacked input[type="tel"],
+.skin .form-stacked input[type="color"],
+.skin .form-stacked select,
+.skin .form-stacked label,
+.skin .form-stacked textarea {
+    display: block;
+    margin: 0.25em 0;
+}
+
+.skin .form-aligned input,
+.skin .form-aligned textarea,
+.skin .form-aligned select,
+    /* note: help-inline is deprecated. Use .form-message-inline instead */
+.skin .form-aligned .help-inline,
+.skin .form-message-inline {
+    display: inline-block;
+    *display: inline; /* IE7 inline-block hack */
+    *zoom: 1;
+    vertical-align: middle;
+}
+
+/* aligned Forms */
+.skin .form-aligned .control-group {
+    margin-bottom: 0.5em;
+}
+.skin .form-aligned .control-group label {
+    text-align: right;
+    display: inline-block;
+    vertical-align: middle;
+    width: 10em;
+    margin: 0 1em 0 0;
+}
+.skin .form-aligned .controls {
+    margin: 1.5em 0 0 10em;
+}
+
+/* Rounded Inputs */
+.skin .form input.input-rounded,
+.skin .form .input-rounded {
+    border-radius: 30px;
+    padding: 0.5em 1em;
+}
+
+/* Grouped Inputs */
+.skin .form .group fieldset {
+    margin-bottom: 10px;
+}
+.skin .form .group input {
+    display: block;
+    padding: 0.5em 0.6em;
+    margin: 0;
+    border-radius: 0;
+    position: relative;
+    top: -1px;
+}
+.skin .form .group input:focus {
+    z-index: 2;
+}
+.skin .form .group input:first-child {
+    top: 1px;
+    border-radius: 4px 4px 0px 0px;
+}
+.skin .form .group input:last-child {
+    top: -2px;
+    border-radius: 0px 0px 4px 4px;
+}
+.skin .form .group button {
+    margin: 0.35em 0;
+}
+
+.skin .form .input-1 {
+    width: 100%;
+}
+.skin .form .input-2-3 {
+    width: 66%;
+}
+.skin .form .input-1-2 {
+    width: 50%;
+}
+.skin .form .input-1-3 {
+    width: 33%;
+}
+.skin .form .input-1-4 {
+    width: 25%;
+}
+
+/* Inline help for forms */
+/* Note: help-inline is deprecated. Use .form-message-inline instead */
+.skin .form .help-inline,
+.skin .form-message-inline {
+    display: inline-block;
+    padding-left: 0.3em;
+    color: #adadad;
+    vertical-align: middle;
+    font-size: 90%;
+}
+
+/* Block help for forms */
+.skin .form-message {
+    display: block;
+    color: #adadad;
+    font-size: 90%;
+}
+/* note no template for forms-r.css. no skinnable properties */
+
+/* foundational CSS */
+.skin .table {
+    /* Remove spacing between table cells (from Normalize.css) */
+    border-collapse: collapse;
+    border-spacing: 0;
+    empty-cells: show;
+    border: 1px solid #0f131f;
+}
+
+.skin .table caption {
+    color: #adadad;
+    font: italic 85%/1 arial, sans-serif;
+    padding: 1em 0;
+    text-align: center;
+}
+
+.skin .table td,
+.skin .table th {
+    border-left: 1px solid #0f131f;/* inner column border */
+    border-width: 0 0 0 1px;
+    font-size: inherit;
+    margin: 0;
+    overflow: visible; /*to make ths where the title is really long work*/
+    padding: 0.3em 0.6em; /* cell padding */
+}
+
+.skin .table td:first-child,
+.skin .table th:first-child {
+    border-left-width: 0;
+}
+
+.skin .table thead {
+    background-color: #4c3d2a;
+    color: #ede6de;
+    text-align: left;
+    vertical-align: bottom;
+}
+
+/*
+striping:
+   even - #fff (white)
+   odd  - #f2f2f2 (light gray)
+*/
+.skin .table td {
+    background-color: #192033;
+    color: #bec7df;
+}
+.skin .table-odd td {
+    background-color: #0f131f;
+    color: #b4bfda;
+}
+
+/* nth-child selector for modern browsers */
+.skin .table-striped tr:nth-child(2n-1) td {
+    background-color: #0f131f;
+    color: #b4bfda;
+}
+
+
+/* BORDERED TABLES */
+.skin .table-bordered td {
+    border-bottom: 1px solid #0f131f;
+}
+.skin .table-bordered tbody > tr:last-child td,
+.skin .table-horizontal tbody > tr:last-child td {
+    border-bottom-width: 0;
+}
+
+/* HORIZONTAL BORDERED TABLES */
+.skin .table-horizontal td,
+.skin .table-horizontal th {
+    border-width: 0 0 1px 0;
+    border-bottom:1px solid #0f131f;
+}
+.skin .table-horizontal tbody > tr:last-child td {
+    border-bottom-width: 0;
+}
+
+/* from PURE menu-core.css */
+/*csslint adjoining-classes:false, outline-none:false*/
+/*TODO: Remove this lint rule override after a refactor of this code.*/
+
+.skin .menu ul {
+    position: absolute;
+    visibility: hidden;
+}
+
+.skin .menu.menu-open {
+    visibility: visible;
+    z-index: 2;
+    width: 100%;
+}
+
+.skin .menu ul {
+    left: -10000px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    top: -10000px;
+    z-index: 1;
+}
+
+.skin .menu > ul { position: relative; }
+
+.skin .menu-open > ul {
+    left: 0;
+    top: 0;
+    visibility: visible;
+}
+
+.skin .menu-open > ul:focus {
+    outline: 0;
+}
+
+.skin .menu li {
+    position: relative;
+}
+
+.skin .menu a, .skin .menu .menu-heading {
+    display: block;
+    color: inherit;
+    line-height: 1.5em;
+    padding: 0.35em 1.4em;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.skin .menu.menu-horizontal > .menu-heading {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    margin: 0;
+    vertical-align: middle;
+}
+.skin .menu.menu-horizontal > ul {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    vertical-align: middle;
+    /* height: 2.4em; removed for Skin Builder */
+}
+
+.skin .menu li a { padding: 0.35em 1.4em; }
+
+.skin .menu-can-have-children > .menu-label:after {
+    content: '\25B8';
+    float: right;
+    font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'DejaVu Sans', sans-serif; /* These specific fonts have the Unicode char we need. */
+    margin-right: -20px;
+    margin-top: -1px;
+}
+
+.skin .menu-can-have-children > .menu-label {
+    padding-right: 30px;
+}
+
+.skin .menu-separator {
+    background-color: #0f131f;
+    display: block;
+    height: 1px;
+    font-size: 0;
+    margin: 7px 2px;
+    overflow: hidden;
+}
+
+.skin .menu-hidden {
+    display: none;
+}
+
+/* FIXED MENU */
+.skin .menu-fixed {
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+}
+
+
+/* HORIZONTAL MENU CODE */
+
+/* Initial menus should be inline-block so that they are horizontal */
+.skin .menu-horizontal li {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    vertical-align: middle;
+}
+
+/* Submenus should still be display:block; */
+.skin .menu-horizontal li li {
+    display: block;
+}
+
+/* Content after should be down arrow */
+.skin .menu-horizontal > .menu-children > .menu-can-have-children > .menu-label:after {
+    content: "\25BE";
+}
+/*Add extra padding to elements that have the arrow so that the hover looks nice */
+.skin .menu-horizontal > .menu-children > .menu-can-have-children > .menu-label {
+    padding-right: 30px;
+}
+
+/* Adjusting separator for vertical menus */
+.skin .menu-horizontal li.menu-separator {
+    height: 50%;
+    width: 1px;
+    margin: 0 7px;
+}
+
+/* Submenus should be horizontal separator again */
+.skin .menu-horizontal li li.menu-separator {
+    height: 1px;
+    width: auto;
+    margin: 7px 2px;
+}
+
+
+/* end from yuicss/menu-core.css *******************************************/
+/* from yuicss menu-paginator.css */
+/*csslint box-model:false*/
+/*TODO: Remove this lint rule override after a refactor of this code.*/
+
+.skin .paginator {
+
+    /* `g` Grid styles */
+    letter-spacing: -0.31em; /* Webkit: collapse white-space between units */
+    *letter-spacing: normal; /* reset IE < 8 */
+    *word-spacing: -0.43em; /* IE < 8: collapse white-space between units */
+    text-rendering: optimizespeed; /* Webkit: fixes text-rendering: optimizeLegibility */
+
+    /* `paginator` Specific styles */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.opera-only :-o-prefocus,
+.skin .paginator {
+    word-spacing: -0.43em;
+}
+
+/* `u` Grid styles */
+.skin .paginator li {
+    display: inline-block;
+    *display: inline; /* IE < 8: fake inline-block */
+    zoom: 1;
+    letter-spacing: normal;
+    word-spacing: normal;
+    vertical-align: top;
+    text-rendering: auto;
+}
+.skin .paginator .button {
+    border-radius: 0;
+    padding: 0.8em 1.4em;
+    vertical-align: top;
+    height: 1.1em;
+}
+.skin .paginator .button:focus,
+.skin .paginator .button:active {
+    outline-style: none;
+}
+.skin .paginator .prev,
+.skin .paginator .next {
+    /*color: #C0C1C3; allow .button to color text*/
+}
+.skin .paginator .prev {
+    border-radius: 4px 0px 0px 4px;
+}
+.skin .paginator .next {
+    border-radius: 0px 4px 4px 0px;
+}
+/* end from PURE menu-paginator.css ******************************/
+/* from PURE menu.css *******************************************/
+/* MAIN MENU STYLING */
+/*csslint adjoining-classes:false*/
+/*TODO: Remove this lint rule override after a refactor of this code.*/
+
+.skin .menu.menu-open,
+.skin .menu.menu-horizontal li .menu-children {
+    background: #192033; /* Old browsers */
+    border: 1px solid #0f131f;
+}
+
+/* remove borders for horizontal menus */
+.skin .menu.menu-horizontal,
+.skin .menu.menu-horizontal .menu-heading {
+    border: none;
+}
+
+
+/* LINK STYLES */
+
+.skin .menu a {
+    border: 1px solid transparent;
+    border-left: none;
+    border-right: none;
+
+}
+
+.skin .menu a,
+.skin .menu .menu-can-have-children > li:after {
+    color: #bec7df;
+}
+
+.skin .menu .menu-can-have-children > li:hover:after {
+    color: #b4bfda;
+}
+
+/* Focus style for a dropdown menu-item when the parent has been opened */
+.skin .menu .menu-open {
+    background: #141a29;
+}
+
+.skin .menu li a:hover,
+.skin .menu li a:focus {
+    background: #141a29;
+}
+
+/* DISABLED STATES */
+.skin .menu li.menu-disabled a:hover,
+.skin .menu li.menu-disabled a:focus {
+    background: #192033;
+    color: #546bab;
+}
+
+.skin .menu .menu-disabled > a {
+    background-image: none;
+    border-color: transparent;
+    cursor: default;
+}
+
+.skin .menu .menu-disabled > a,
+.skin .menu .menu-can-have-children.menu-disabled > a:after {
+    color: #546bab;
+}
+
+/* HEADINGS */
+.skin .menu .menu-heading {
+    color: #f1f3f8;
+    text-transform: uppercase;
+    font-size: 90%;
+    margin-top: 0.5em;
+    border-bottom: solid 1px #0f131f;
+}
+
+
+/* SELECTED MENU ITEM */
+.skin .menu li.menu-selected a {
+    background-color: #3355BA;
+    color: #fbfcfe;
+}
+
+/* FIXED MENU */
+.skin .menu.menu-open.menu-fixed {
+    border: none;
+    border-bottom: 1px solid #0f131f;
+}
+/* end from PURE menu.css ***********************************/
+/* from PURE menu-responsive.css ****************************/
+/* RESPONSIVE */
+
+@media (max-width: 480px) {
+
+    .skin .menu-horizontal {
+        width:100%;
+    }
+
+    .skin .menu-children li {
+        display: block;
+        border-bottom:1px solid #0f131f;
+    }
+
+}
+/* end from menu-responsive.css ******************/
+.skin .month{
+    border-collapse: collapse;
+    border-spacing: 0;
+    empty-cells: show;
+    border: 1px solid #0f131f;
+}
+
+.skin .weekend{
+    color: red;
+}
