@@ -12,6 +12,7 @@ body {
     line-height: 1.7em;
     color: #ffffff;
     font-size: 13px;
+    background-color: #2d3e50;
 }
 
 h1,
@@ -24,7 +25,7 @@ label {
     color: #34495e;
 }
 
-.pure-img-responsive {
+.img-responsive {
     max-width: 100%;
     height: auto;
 }
@@ -52,125 +53,18 @@ label {
  * -- PURE FORM STYLES --
  * Style the form inputs and labels
  */
-.pure-form label {
+.form label {
     margin: 1em 0 0;
     font-weight: bold;
     font-size: 100%;
 }
 
-.pure-form input[type] {
+.form input[type] {
     border: 2px solid #ddd;
     box-shadow: none;
     font-size: 100%;
     width: 100%;
     margin-bottom: 1em;
-}
-
-/*
- * -- PURE BUTTON STYLES --
- * I want my pure-button elements to look a little different
- */
-.pure-button {
-    background-color: #1f8dd6;
-    color: white;
-    padding: 0.5em 2em;
-    border-radius: 5px;
-}
-
-a.pure-button-primary {
-    background: white;
-    color: #1f8dd6;
-    border-radius: 5px;
-    font-size: 120%;
-}
-
-
-/*
- * -- MENU STYLES --
- * I want to customize how my .pure-menu looks at the top of the page
- */
-
-.home-menu {
-    padding: 0.5em;
-    text-align: center;
-    box-shadow: 0 1px 1px rgba(0,0,0, 0.10);
-}
-.home-menu {
-    background: #2d3e50;
-}
-.pure-menu.pure-menu-fixed {
-    /* Fixed menus normally have a border at the bottom. */
-    border-bottom: none;
-    /* I need a higher z-index here because of the scroll-over effect. */
-    z-index: 4;
-}
-
-.home-menu .pure-menu-heading {
-    color: white;
-    font-weight: 400;
-    font-size: 120%;
-}
-
-.home-menu .pure-menu-selected a {
-    color: white;
-}
-
-.home-menu a {
-    color: #6FBEF3;
-}
-.home-menu li a:hover,
-.home-menu li a:focus {
-    background: none;
-    border: none;
-    color: #AECFE5;
-}
-
-
-/*
- * -- SPLASH STYLES --
- * This is the blue top section that appears on the page.
- */
-
-.splash-container {
-    background: #1f8dd6;
-    z-index: 1;
-    overflow: hidden;
-    /* The following styles are required for the "scroll-over" effect */
-    width: 100%;
-    height: 88%;
-    top: 0;
-    left: 0;
-    position: fixed !important;
-}
-
-.splash {
-    /* absolute center .splash within .splash-container */
-    width: 80%;
-    height: 50%;
-    margin: auto;
-    position: absolute;
-    top: 100px; left: 0; bottom: 0; right: 0;
-    text-align: center;
-    text-transform: uppercase;
-}
-
-/* This is the main heading that appears on the blue section */
-.splash-head {
-    font-size: 20px;
-    font-weight: bold;
-    color: white;
-    border: 3px solid white;
-    padding: 1em 1.6em;
-    font-weight: 100;
-    border-radius: 5px;
-    line-height: 1em;
-}
-
-/* This is the subheading that appears on the blue section */
-.splash-subhead {
-    color: white;
-    letter-spacing: 0.05em;
-    opacity: 0.8;
 }
 
 /*
@@ -181,7 +75,7 @@ a.pure-button-primary {
     /* These styles are required for the "scroll-over" effect */
     position: absolute;
     top: 0%;
-    width: 100%;
+    width: 90%;
     min-height: 12%;
     z-index: 2;
     background: #000000;
@@ -236,32 +130,6 @@ a.pure-button-primary {
         padding: 1em;
     }
 
-    /* We can align the menu header to the left, but float the
-    menu items to the right. */
-    .home-menu {
-        text-align: left;
-    }
-    .home-menu ul {
-        float: right;
-    }
-
-    /* We increase the height of the splash-container */
-    /*    .splash-container {
-            height: 500px;
-        }*/
-
-    /* We decrease the width of the .splash, since we have more width
-    to work with */
-    .splash {
-        width: 50%;
-        height: 50%;
-    }
-
-    .splash-head {
-        font-size: 250%;
-    }
-
-
     /* We remove the border-separator assigned to .l-box-lrg */
     .l-box-lrg {
         border: none;
@@ -275,14 +143,11 @@ a.pure-button-primary {
  * of the mobile and tablet styles.
  */
 @media (min-width: 78em) {
-    /* We increase the header font size even more */
-    .splash-head {
-        font-size: 300%;
-    }
+
 }
 
 /* from PURE buttons-core.css */
-.skin .button {
+.button {
     /* Structure */
     display: inline-block;
     *display: inline; /*IE 6/7*/
@@ -300,7 +165,7 @@ a.pure-button-primary {
 }
 
 /* Firefox: Get rid of the inner focus border */
-.skin .button::-moz-focus-inner{
+.button::-moz-focus-inner {
     padding: 0;
     border: 0;
 }
@@ -308,7 +173,7 @@ a.pure-button-primary {
 /* from PURE buttons.css */
 /*csslint unqualified-attributes:false*/
 
-.skin .button {
+.button {
     font-size: 100%;
     *font-size: 90%; /*IE 6/7 - To reduce IE's oversized button text*/
     *overflow: visible; /*IE 6/7 - Because of IE's overly large left/right padding on buttons */
@@ -330,8 +195,8 @@ a.pure-button-primary {
     transition: 0.1s linear box-shadow;
 }
 
-.skin .button-hover,
-.skin .button:hover {
+.button-hover,
+.button:hover {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#00000000', GradientType=0);
     background-image: -webkit-gradient(linear, 0 0, 0 100%, from(transparent), color-stop(40%, rgba(0,0,0, 0.05)), to(rgba(0,0,0, 0.05)));
     background-image: -webkit-linear-gradient(transparent, rgba(0,0,0, 0.05) 40%, rgba(0,0,0, 0.15));
@@ -341,18 +206,19 @@ a.pure-button-primary {
     background-image: linear-gradient(transparent, rgba(0,0,0, 0.05) 40%, rgba(0,0,0, 0.05));
 }
 
-.skin .button:focus {
+.button:focus {
     outline: 0;
 }
-.skin .button-active,
-.skin .button:active {
+
+.button-active,
+.button:active {
     box-shadow: 0 0 0 1px rgba(0,0,0, 0.15) inset, 0 0 6px rgba(0,0,0, 0.20) inset;
 }
 
-.skin .button[disabled],
-.skin .button-disabled,
-.skin .button-disabled:hover,
-.skin .button-disabled:active {
+.button[disabled],
+.button-disabled,
+.button-disabled:hover,
+.button-disabled:active {
     border: none;
     background-image: none;
     filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
@@ -364,20 +230,20 @@ a.pure-button-primary {
     box-shadow: none;
 }
 
-.skin .button-hidden {
+.button-hidden {
     display: none;
 }
 
 /* Firefox: Get rid of the inner focus border */
-.skin .button::-moz-focus-inner{
+.button::-moz-focus-inner {
     padding: 0;
     border: 0;
 }
 
-.skin .button-primary,
-.skin .button-selected,
-.skin a.button-primary,
-.skin a.button-selected {
+.button-primary,
+.button-selected,
+a.button-primary,
+a.button-selected {
     background-color: #3355BA;
     color: #fbfcfe;
 }
@@ -399,14 +265,13 @@ Forms Core
  * Corrects margin displayed oddly in IE 6/7.
  */
 
-.skin .form {
+.form {
     margin: 0;
 }
 
 /* Define consistent border, margin, and padding.*/
 
-
-.skin .form fieldset {
+.form fieldset {
     border: 1px solid #c0c0c0;
     margin: 0 2px;
     padding: 0.35em 0.625em 0.75em;
@@ -418,7 +283,7 @@ Forms Core
  * 3. Corrects alignment displayed oddly in IE 6/7.
  */
 
-.skin .form legend {
+.form legend {
     border: 0; /* 1 */
     padding: 0;
     white-space: normal; /* 2 */
@@ -432,10 +297,10 @@ Forms Core
  * 3. Improves appearance and consistency in all browsers.
  */
 
-.skin .form button,
-.skin .form input,
-.skin .form select,
-.skin .form textarea {
+.form button,
+.form input,
+.form select,
+.form textarea {
     font-size: 100%; /* 1 */
     margin: 0; /* 2 */
     vertical-align: baseline; /* 3 */
@@ -447,8 +312,8 @@ Forms Core
  * the UA stylesheet.
  */
 
-.skin .form button,
-.skin .form input {
+.form button,
+.form input {
     line-height: normal;
 }
 
@@ -462,10 +327,10 @@ Forms Core
  *    Known issue: inner spacing remains in IE 6.
  */
 
-.skin .form button,
-.skin .form input[type="button"], /* 1 */
-.skin .form input[type="reset"],
-.skin .form input[type="submit"] {
+.form button,
+.form input[type="button"], /* 1 */
+.form input[type="reset"],
+.form input[type="submit"] {
     -webkit-appearance: button; /* 2 */
     cursor: pointer; /* 3 */
     *overflow: visible;  /* 4 */
@@ -475,8 +340,8 @@ Forms Core
  * Re-set default cursor for disabled elements.
  */
 
-.skin .form button[disabled],
-.skin .form input[disabled] {
+.form button[disabled],
+.form input[disabled] {
     cursor: default;
 }
 
@@ -487,8 +352,8 @@ Forms Core
  *    Known issue: excess padding remains in IE 6.
  */
 
-.skin .form input[type="checkbox"],
-.skin .form input[type="radio"] {
+.form input[type="checkbox"],
+.form input[type="radio"] {
     box-sizing: border-box; /* 1 */
     padding: 0; /* 2 */
     *height: 13px; /* 3 */
@@ -501,7 +366,7 @@ Forms Core
  *    (include `-moz` to future-proof).
  */
 
-.skin .form input[type="search"] {
+.form input[type="search"] {
     -webkit-appearance: textfield; /* 1 */
     -moz-box-sizing: content-box;
     -webkit-box-sizing: content-box; /* 2 */
@@ -513,8 +378,8 @@ Forms Core
  * on OS X.
  */
 
-.skin .form input[type="search"]::-webkit-search-cancel-button,
-.skin .form input[type="search"]::-webkit-search-decoration {
+.form input[type="search"]::-webkit-search-cancel-button,
+.form input[type="search"]::-webkit-search-decoration {
     -webkit-appearance: none;
 }
 
@@ -522,8 +387,8 @@ Forms Core
  * Removes inner padding and border in Firefox 3+.
  */
 
-.skin .form button::-moz-focus-inner,
-.skin .form input::-moz-focus-inner {
+.form button::-moz-focus-inner,
+.form input::-moz-focus-inner {
     border: 0;
     padding: 0;
 }
@@ -533,67 +398,67 @@ Forms Core
  * 2. Improves readability and alignment in all browsers.
  */
 
-.skin .form textarea {
+.form textarea {
     overflow: auto; /* 1 */
     vertical-align: top; /* 2 */
 }
 /* ===============  forms-responsive.css =================*/
 @media only screen and (max-width : 480px) {
-    .skin .form button[type="submit"] {
+    .form button[type="submit"] {
         margin: 0.7em 0 0;
     }
 
-    .skin .form input[type="text"],
-    .skin .form input[type="password"],
-    .skin .form input[type="email"],
-    .skin .form input[type="url"],
-    .skin .form input[type="date"],
-    .skin .form input[type="month"],
-    .skin .form input[type="time"],
-    .skin .form input[type="datetime"],
-    .skin .form input[type="datetime-local"],
-    .skin .form input[type="week"],
-    .skin .form input[type="number"],
-    .skin .form input[type="search"],
-    .skin .form input[type="tel"],
-    .skin .form input[type="color"],
-    .skin .form label {
+    .form input[type="text"],
+    .form input[type="password"],
+    .form input[type="email"],
+    .form input[type="url"],
+    .form input[type="date"],
+    .form input[type="month"],
+    .form input[type="time"],
+    .form input[type="datetime"],
+    .form input[type="datetime-local"],
+    .form input[type="week"],
+    .form input[type="number"],
+    .form input[type="search"],
+    .form input[type="tel"],
+    .form input[type="color"],
+    .form label {
         margin-bottom: 0.3em;
         display: block;
     }
 
-    .skin .group input[type="text"],
-    .skin .group input[type="password"],
-    .skin .group input[type="email"],
-    .skin .group input[type="url"],
-    .skin .group input[type="date"],
-    .skin .group input[type="month"],
-    .skin .group input[type="time"],
-    .skin .group input[type="datetime"],
-    .skin .group input[type="datetime-local"],
-    .skin .group input[type="week"],
-    .skin .group input[type="number"],
-    .skin .group input[type="search"],
-    .skin .group input[type="tel"],
-    .skin .group input[type="color"] {
+    .group input[type="text"],
+    .group input[type="password"],
+    .group input[type="email"],
+    .group input[type="url"],
+    .group input[type="date"],
+    .group input[type="month"],
+    .group input[type="time"],
+    .group input[type="datetime"],
+    .group input[type="datetime-local"],
+    .group input[type="week"],
+    .group input[type="number"],
+    .group input[type="search"],
+    .group input[type="tel"],
+    .group input[type="color"] {
         margin-bottom: 0;
     }
 
-    .skin .form-aligned .control-group label {
+    .form-aligned .control-group label {
         margin-bottom: 0.3em;
         text-align: left;
         display: block;
         width: 100%;
     }
 
-    .skin .form-aligned .controls {
+    .form-aligned .controls {
         margin: 1.5em 0 0 0;
     }
 
     /* NOTE: help-inline is deprecated. Use .form-message-inline instead. */
-    .skin .form .help-inline,
-    .skin .form-message-inline,
-    .skin .form-message {
+    .form .help-inline,
+    .form-message-inline,
+    .form-message {
         display: block;
         font-size: 80%;
         /* increased bottom padding to make it group with its related input element */
@@ -602,22 +467,22 @@ Forms Core
 }
 
 /* ===============  forms.css =================================*/
-.skin .form input[type="text"],
-.skin .form input[type="password"],
-.skin .form input[type="email"],
-.skin .form input[type="url"],
-.skin .form input[type="date"],
-.skin .form input[type="month"],
-.skin .form input[type="time"],
-.skin .form input[type="datetime"],
-.skin .form input[type="datetime-local"],
-.skin .form input[type="week"],
-.skin .form input[type="number"],
-.skin .form input[type="search"],
-.skin .form input[type="tel"],
-.skin .form input[type="color"],
-.skin .form select,
-.skin .form textarea {
+.form input[type="text"],
+.form input[type="password"],
+.form input[type="email"],
+.form input[type="url"],
+.form input[type="date"],
+.form input[type="month"],
+.form input[type="time"],
+.form input[type="datetime"],
+.form input[type="datetime-local"],
+.form input[type="week"],
+.form input[type="number"],
+.form input[type="search"],
+.form input[type="tel"],
+.form input[type="color"],
+.form select,
+.form textarea {
     padding: 0.5em 0.6em;
     display: inline-block;
     border: 1px solid #e6e6e6;
@@ -635,104 +500,115 @@ Forms Core
     -webkit-font-smoothing: antialiased;
 }
 
-.skin .form input[type="text"]:focus,
-.skin .form input[type="password"]:focus,
-.skin .form input[type="email"]:focus,
-.skin .form input[type="url"]:focus,
-.skin .form input[type="date"]:focus,
-.skin .form input[type="month"]:focus,
-.skin .form input[type="time"]:focus,
-.skin .form input[type="datetime"]:focus,
-.skin .form input[type="datetime-local"]:focus,
-.skin .form input[type="week"]:focus,
-.skin .form input[type="number"]:focus,
-.skin .form input[type="search"]:focus,
-.skin .form input[type="tel"]:focus,
-.skin .form input[type="color"]:focus,
-.skin .form select:focus,
-.skin .form textarea:focus {
+.form input[type="text"]:focus,
+.form input[type="password"]:focus,
+.form input[type="email"]:focus,
+.form input[type="url"]:focus,
+.form input[type="date"]:focus,
+.form input[type="month"]:focus,
+.form input[type="time"]:focus,
+.form input[type="datetime"]:focus,
+.form input[type="datetime-local"]:focus,
+.form input[type="week"]:focus,
+.form input[type="number"]:focus,
+.form input[type="search"]:focus,
+.form input[type="tel"]:focus,
+.form input[type="color"]:focus,
+.form select:focus,
+.form textarea:focus {
     outline: 0;
     outline: thin dotted \9; /* IE6-9 */
     border-color: #129FEA;
 }
 
-.skin .form input[type="file"]:focus,
-.skin .form input[type="radio"]:focus,
-.skin .form input[type="checkbox"]:focus {
+.form input[type="file"]:focus,
+.form input[type="radio"]:focus,
+.form input[type="checkbox"]:focus {
     outline: thin dotted #333;
     outline: 1px auto #129FEA;
 }
-.skin .form .checkbox,
-.skin .form .radio {
+
+.form .checkbox,
+.form .radio {
     margin: 0.5em 0;
     display: block;
 }
-.skin .form input[type="text"][disabled],
-.skin .form input[type="password"][disabled],
-.skin .form input[type="email"][disabled],
-.skin .form input[type="url"][disabled],
-.skin .form input[type="date"][disabled],
-.skin .form input[type="month"][disabled],
-.skin .form input[type="time"][disabled],
-.skin .form input[type="datetime"][disabled],
-.skin .form input[type="datetime-local"][disabled],
-.skin .form input[type="week"][disabled],
-.skin .form input[type="number"][disabled],
-.skin .form input[type="search"][disabled],
-.skin .form input[type="tel"][disabled],
-.skin .form input[type="color"][disabled],
-.skin .form select[disabled],
-.skin .form textarea[disabled] {
+
+.form input[type="text"][disabled],
+.form input[type="password"][disabled],
+.form input[type="email"][disabled],
+.form input[type="url"][disabled],
+.form input[type="date"][disabled],
+.form input[type="month"][disabled],
+.form input[type="time"][disabled],
+.form input[type="datetime"][disabled],
+.form input[type="datetime-local"][disabled],
+.form input[type="week"][disabled],
+.form input[type="number"][disabled],
+.form input[type="search"][disabled],
+.form input[type="tel"][disabled],
+.form input[type="color"][disabled],
+.form select[disabled],
+.form textarea[disabled] {
     cursor: not-allowed;
     box-shadow: inset 0 1px 10px #ededed;
     background-color: #ededed;
     color: #adadad;
     border-color: #e6e6e6;
 }
-.skin .form input[readonly],
-.skin .form select[readonly],
-.skin .form textarea[readonly],
-.skin .form input[readonly]:focus,
-.skin .form select[readonly]:focus,
-.skin .form textarea[readonly]:focus {
+
+.form input[readonly],
+.form select[readonly],
+.form textarea[readonly],
+.form input[readonly]:focus,
+.form select[readonly]:focus,
+.form textarea[readonly]:focus {
     background: #eee; /* menu hover bg color */
     color: #777; /* menu text color */
     border-color: #ccc;
 }
-.skin .form input:focus:invalid,
-.skin .form textarea:focus:invalid,
-.skin .form select:focus:invalid {
+
+.form input:focus:invalid,
+.form textarea:focus:invalid,
+.form select:focus:invalid {
     color: #b94a48;
     border: 1px solid #ee5f5b;
 }
-.skin .form input:focus:invalid:focus,
-.skin .form textarea:focus:invalid:focus,
-.skin .form select:focus:invalid:focus {
+
+.form input:focus:invalid:focus,
+.form textarea:focus:invalid:focus,
+.form select:focus:invalid:focus {
     border-color: #e9322d;
 }
-.skin .form input[type="file"]:focus:invalid:focus,
-.skin .form input[type="radio"]:focus:invalid:focus,
-.skin .form input[type="checkbox"]:focus:invalid:focus {
+
+.form input[type="file"]:focus:invalid:focus,
+.form input[type="radio"]:focus:invalid:focus,
+.form input[type="checkbox"]:focus:invalid:focus {
     outline-color: #e9322d;
 }
-.skin .form select {
+
+.form select {
     border: 1px solid #e6e6e6;
     background-color: white;
 }
-.skin .form select[multiple] {
+
+.form select[multiple] {
     height: auto;
 }
-.skin .form label {
+
+.form label {
     margin: 0.5em 0 0.2em;
     color: #4f4f4f;
     font-size:90%;
 }
-.skin .form fieldset {
+
+.form fieldset {
     margin: 0;
     padding: 0.35em 0 0.75em;
     border: 0;
 }
-.skin .form legend {
+
+.form legend {
     display: block;
     width: 100%;
     padding: 0.3em 0;
@@ -742,33 +618,33 @@ Forms Core
     border-bottom: 1px solid #ededed;
 }
 
-.skin .form-stacked input[type="text"],
-.skin .form-stacked input[type="password"],
-.skin .form-stacked input[type="email"],
-.skin .form-stacked input[type="url"],
-.skin .form-stacked input[type="date"],
-.skin .form-stacked input[type="month"],
-.skin .form-stacked input[type="time"],
-.skin .form-stacked input[type="datetime"],
-.skin .form-stacked input[type="datetime-local"],
-.skin .form-stacked input[type="week"],
-.skin .form-stacked input[type="number"],
-.skin .form-stacked input[type="search"],
-.skin .form-stacked input[type="tel"],
-.skin .form-stacked input[type="color"],
-.skin .form-stacked select,
-.skin .form-stacked label,
-.skin .form-stacked textarea {
+.form-stacked input[type="text"],
+.form-stacked input[type="password"],
+.form-stacked input[type="email"],
+.form-stacked input[type="url"],
+.form-stacked input[type="date"],
+.form-stacked input[type="month"],
+.form-stacked input[type="time"],
+.form-stacked input[type="datetime"],
+.form-stacked input[type="datetime-local"],
+.form-stacked input[type="week"],
+.form-stacked input[type="number"],
+.form-stacked input[type="search"],
+.form-stacked input[type="tel"],
+.form-stacked input[type="color"],
+.form-stacked select,
+.form-stacked label,
+.form-stacked textarea {
     display: block;
     margin: 0.25em 0;
 }
 
-.skin .form-aligned input,
-.skin .form-aligned textarea,
-.skin .form-aligned select,
+.form-aligned input,
+.form-aligned textarea,
+.form-aligned select,
     /* note: help-inline is deprecated. Use .form-message-inline instead */
-.skin .form-aligned .help-inline,
-.skin .form-message-inline {
+.form-aligned .help-inline,
+.form-message-inline {
     display: inline-block;
     *display: inline; /* IE7 inline-block hack */
     *zoom: 1;
@@ -776,32 +652,35 @@ Forms Core
 }
 
 /* aligned Forms */
-.skin .form-aligned .control-group {
+.form-aligned .control-group {
     margin-bottom: 0.5em;
 }
-.skin .form-aligned .control-group label {
+
+.form-aligned .control-group label {
     text-align: right;
     display: inline-block;
     vertical-align: middle;
     width: 10em;
     margin: 0 1em 0 0;
 }
-.skin .form-aligned .controls {
+
+.form-aligned .controls {
     margin: 1.5em 0 0 10em;
 }
 
 /* Rounded Inputs */
-.skin .form input.input-rounded,
-.skin .form .input-rounded {
+.form input.input-rounded,
+.form .input-rounded {
     border-radius: 30px;
     padding: 0.5em 1em;
 }
 
 /* Grouped Inputs */
-.skin .form .group fieldset {
+.form .group fieldset {
     margin-bottom: 10px;
 }
-.skin .form .group input {
+
+.form .group input {
     display: block;
     padding: 0.5em 0.6em;
     margin: 0;
@@ -809,41 +688,49 @@ Forms Core
     position: relative;
     top: -1px;
 }
-.skin .form .group input:focus {
+
+.form .group input:focus {
     z-index: 2;
 }
-.skin .form .group input:first-child {
+
+.form .group input:first-child {
     top: 1px;
     border-radius: 4px 4px 0px 0px;
 }
-.skin .form .group input:last-child {
+
+.form .group input:last-child {
     top: -2px;
     border-radius: 0px 0px 4px 4px;
 }
-.skin .form .group button {
+
+.form .group button {
     margin: 0.35em 0;
 }
 
-.skin .form .input-1 {
+.form .input-1 {
     width: 100%;
 }
-.skin .form .input-2-3 {
+
+.form .input-2-3 {
     width: 66%;
 }
-.skin .form .input-1-2 {
+
+.form .input-1-2 {
     width: 50%;
 }
-.skin .form .input-1-3 {
+
+.form .input-1-3 {
     width: 33%;
 }
-.skin .form .input-1-4 {
+
+.form .input-1-4 {
     width: 25%;
 }
 
 /* Inline help for forms */
 /* Note: help-inline is deprecated. Use .form-message-inline instead */
-.skin .form .help-inline,
-.skin .form-message-inline {
+.form .help-inline,
+.form-message-inline {
     display: inline-block;
     padding-left: 0.3em;
     color: #adadad;
@@ -852,7 +739,7 @@ Forms Core
 }
 
 /* Block help for forms */
-.skin .form-message {
+.form-message {
     display: block;
     color: #adadad;
     font-size: 90%;
@@ -860,7 +747,7 @@ Forms Core
 /* note no template for forms-r.css. no skinnable properties */
 
 /* foundational CSS */
-.skin .table {
+.table {
     /* Remove spacing between table cells (from Normalize.css) */
     border-collapse: collapse;
     border-spacing: 0;
@@ -868,15 +755,15 @@ Forms Core
     border: 1px solid #0f131f;
 }
 
-.skin .table caption {
+.table caption {
     color: #adadad;
     font: italic 85%/1 arial, sans-serif;
     padding: 1em 0;
     text-align: center;
 }
 
-.skin .table td,
-.skin .table th {
+.table td,
+.table th {
     border-left: 1px solid #0f131f;/* inner column border */
     border-width: 0 0 0 1px;
     font-size: inherit;
@@ -885,12 +772,12 @@ Forms Core
     padding: 0.3em 0.6em; /* cell padding */
 }
 
-.skin .table td:first-child,
-.skin .table th:first-child {
+.table td:first-child,
+.table th:first-child {
     border-left-width: 0;
 }
 
-.skin .table thead {
+.table thead {
     background-color: #4c3d2a;
     color: #ede6de;
     text-align: left;
@@ -902,38 +789,41 @@ striping:
    even - #fff (white)
    odd  - #f2f2f2 (light gray)
 */
-.skin .table td {
+.table td {
     background-color: #192033;
     color: #bec7df;
 }
-.skin .table-odd td {
+
+.table-odd td {
     background-color: #0f131f;
     color: #b4bfda;
 }
 
 /* nth-child selector for modern browsers */
-.skin .table-striped tr:nth-child(2n-1) td {
+.table-striped tr:nth-child(2n-1) td {
     background-color: #0f131f;
     color: #b4bfda;
 }
 
 
 /* BORDERED TABLES */
-.skin .table-bordered td {
+.table-bordered td {
     border-bottom: 1px solid #0f131f;
 }
-.skin .table-bordered tbody > tr:last-child td,
-.skin .table-horizontal tbody > tr:last-child td {
+
+.table-bordered tbody > tr:last-child td,
+.table-horizontal tbody > tr:last-child td {
     border-bottom-width: 0;
 }
 
 /* HORIZONTAL BORDERED TABLES */
-.skin .table-horizontal td,
-.skin .table-horizontal th {
+.table-horizontal td,
+.table-horizontal th {
     border-width: 0 0 1px 0;
     border-bottom:1px solid #0f131f;
 }
-.skin .table-horizontal tbody > tr:last-child td {
+
+.table-horizontal tbody > tr:last-child td {
     border-bottom-width: 0;
 }
 
@@ -941,18 +831,18 @@ striping:
 /*csslint adjoining-classes:false, outline-none:false*/
 /*TODO: Remove this lint rule override after a refactor of this code.*/
 
-.skin .menu ul {
+.menu ul {
     position: absolute;
     visibility: hidden;
 }
 
-.skin .menu.menu-open {
+.menu.menu-open {
     visibility: visible;
     z-index: 2;
     width: 100%;
 }
 
-.skin .menu ul {
+.menu ul {
     left: -10000px;
     list-style: none;
     margin: 0;
@@ -961,23 +851,25 @@ striping:
     z-index: 1;
 }
 
-.skin .menu > ul { position: relative; }
+.menu > ul {
+    position: relative;
+}
 
-.skin .menu-open > ul {
+.menu-open > ul {
     left: 0;
     top: 0;
     visibility: visible;
 }
 
-.skin .menu-open > ul:focus {
+.menu-open > ul:focus {
     outline: 0;
 }
 
-.skin .menu li {
+.menu li {
     position: relative;
 }
 
-.skin .menu a, .skin .menu .menu-heading {
+.menu a, .menu .menu-heading {
     display: block;
     color: inherit;
     line-height: 1.5em;
@@ -986,14 +878,15 @@ striping:
     white-space: nowrap;
 }
 
-.skin .menu.menu-horizontal > .menu-heading {
+.menu.menu-horizontal > .menu-heading {
     display: inline-block;
     *display: inline;
     zoom: 1;
     margin: 0;
     vertical-align: middle;
 }
-.skin .menu.menu-horizontal > ul {
+
+.menu.menu-horizontal > ul {
     display: inline-block;
     *display: inline;
     zoom: 1;
@@ -1001,9 +894,11 @@ striping:
     /* height: 2.4em; removed for Skin Builder */
 }
 
-.skin .menu li a { padding: 0.35em 1.4em; }
+.menu li a {
+    padding: 0.35em 1.4em;
+}
 
-.skin .menu-can-have-children > .menu-label:after {
+.menu-can-have-children > .menu-label:after {
     content: '\25B8';
     float: right;
     font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'DejaVu Sans', sans-serif; /* These specific fonts have the Unicode char we need. */
@@ -1011,11 +906,11 @@ striping:
     margin-top: -1px;
 }
 
-.skin .menu-can-have-children > .menu-label {
+.menu-can-have-children > .menu-label {
     padding-right: 30px;
 }
 
-.skin .menu-separator {
+.menu-separator {
     background-color: #0f131f;
     display: block;
     height: 1px;
@@ -1024,12 +919,12 @@ striping:
     overflow: hidden;
 }
 
-.skin .menu-hidden {
+.menu-hidden {
     display: none;
 }
 
 /* FIXED MENU */
-.skin .menu-fixed {
+.menu-fixed {
     position: fixed;
     top:0;
     left:0;
@@ -1040,7 +935,7 @@ striping:
 /* HORIZONTAL MENU CODE */
 
 /* Initial menus should be inline-block so that they are horizontal */
-.skin .menu-horizontal li {
+.menu-horizontal li {
     display: inline-block;
     *display: inline;
     zoom: 1;
@@ -1048,28 +943,28 @@ striping:
 }
 
 /* Submenus should still be display:block; */
-.skin .menu-horizontal li li {
+.menu-horizontal li li {
     display: block;
 }
 
 /* Content after should be down arrow */
-.skin .menu-horizontal > .menu-children > .menu-can-have-children > .menu-label:after {
+.menu-horizontal > .menu-children > .menu-can-have-children > .menu-label:after {
     content: "\25BE";
 }
 /*Add extra padding to elements that have the arrow so that the hover looks nice */
-.skin .menu-horizontal > .menu-children > .menu-can-have-children > .menu-label {
+.menu-horizontal > .menu-children > .menu-can-have-children > .menu-label {
     padding-right: 30px;
 }
 
 /* Adjusting separator for vertical menus */
-.skin .menu-horizontal li.menu-separator {
+.menu-horizontal li.menu-separator {
     height: 50%;
     width: 1px;
     margin: 0 7px;
 }
 
 /* Submenus should be horizontal separator again */
-.skin .menu-horizontal li li.menu-separator {
+.menu-horizontal li li.menu-separator {
     height: 1px;
     width: auto;
     margin: 7px 2px;
@@ -1081,7 +976,7 @@ striping:
 /*csslint box-model:false*/
 /*TODO: Remove this lint rule override after a refactor of this code.*/
 
-.skin .paginator {
+.paginator {
 
     /* `g` Grid styles */
     letter-spacing: -0.31em; /* Webkit: collapse white-space between units */
@@ -1095,12 +990,12 @@ striping:
     padding: 0;
 }
 .opera-only :-o-prefocus,
-.skin .paginator {
+.paginator {
     word-spacing: -0.43em;
 }
 
 /* `u` Grid styles */
-.skin .paginator li {
+.paginator li {
     display: inline-block;
     *display: inline; /* IE < 8: fake inline-block */
     zoom: 1;
@@ -1109,24 +1004,29 @@ striping:
     vertical-align: top;
     text-rendering: auto;
 }
-.skin .paginator .button {
+
+.paginator .button {
     border-radius: 0;
     padding: 0.8em 1.4em;
     vertical-align: top;
     height: 1.1em;
 }
-.skin .paginator .button:focus,
-.skin .paginator .button:active {
+
+.paginator .button:focus,
+.paginator .button:active {
     outline-style: none;
 }
-.skin .paginator .prev,
-.skin .paginator .next {
+
+.paginator .prev,
+.paginator .next {
     /*color: #C0C1C3; allow .button to color text*/
 }
-.skin .paginator .prev {
+
+.paginator .prev {
     border-radius: 4px 0px 0px 4px;
 }
-.skin .paginator .next {
+
+.paginator .next {
     border-radius: 0px 4px 4px 0px;
 }
 /* end from PURE menu-paginator.css ******************************/
@@ -1135,67 +1035,67 @@ striping:
 /*csslint adjoining-classes:false*/
 /*TODO: Remove this lint rule override after a refactor of this code.*/
 
-.skin .menu.menu-open,
-.skin .menu.menu-horizontal li .menu-children {
+.menu.menu-open,
+.menu.menu-horizontal li .menu-children {
     background: #192033; /* Old browsers */
     border: 1px solid #0f131f;
 }
 
 /* remove borders for horizontal menus */
-.skin .menu.menu-horizontal,
-.skin .menu.menu-horizontal .menu-heading {
+.menu.menu-horizontal,
+.menu.menu-horizontal .menu-heading {
     border: none;
 }
 
 
 /* LINK STYLES */
 
-.skin .menu a {
+.menu a {
     border: 1px solid transparent;
     border-left: none;
     border-right: none;
 
 }
 
-.skin .menu a,
-.skin .menu .menu-can-have-children > li:after {
+.menu a,
+.menu .menu-can-have-children > li:after {
     color: #bec7df;
 }
 
-.skin .menu .menu-can-have-children > li:hover:after {
+.menu .menu-can-have-children > li:hover:after {
     color: #b4bfda;
 }
 
 /* Focus style for a dropdown menu-item when the parent has been opened */
-.skin .menu .menu-open {
+.menu .menu-open {
     background: #141a29;
 }
 
-.skin .menu li a:hover,
-.skin .menu li a:focus {
+.menu li a:hover,
+.menu li a:focus {
     background: #141a29;
 }
 
 /* DISABLED STATES */
-.skin .menu li.menu-disabled a:hover,
-.skin .menu li.menu-disabled a:focus {
+.menu li.menu-disabled a:hover,
+.menu li.menu-disabled a:focus {
     background: #192033;
     color: #546bab;
 }
 
-.skin .menu .menu-disabled > a {
+.menu .menu-disabled > a {
     background-image: none;
     border-color: transparent;
     cursor: default;
 }
 
-.skin .menu .menu-disabled > a,
-.skin .menu .menu-can-have-children.menu-disabled > a:after {
+.menu .menu-disabled > a,
+.menu .menu-can-have-children.menu-disabled > a:after {
     color: #546bab;
 }
 
 /* HEADINGS */
-.skin .menu .menu-heading {
+.menu .menu-heading {
     color: #f1f3f8;
     text-transform: uppercase;
     font-size: 90%;
@@ -1205,13 +1105,13 @@ striping:
 
 
 /* SELECTED MENU ITEM */
-.skin .menu li.menu-selected a {
+.menu li.menu-selected a {
     background-color: #3355BA;
     color: #fbfcfe;
 }
 
 /* FIXED MENU */
-.skin .menu.menu-open.menu-fixed {
+.menu.menu-open.menu-fixed {
     border: none;
     border-bottom: 1px solid #0f131f;
 }
@@ -1221,24 +1121,32 @@ striping:
 
 @media (max-width: 480px) {
 
-    .skin .menu-horizontal {
+    .menu-horizontal {
         width:100%;
     }
 
-    .skin .menu-children li {
+    .menu-children li {
         display: block;
         border-bottom:1px solid #0f131f;
     }
 
 }
 /* end from menu-responsive.css ******************/
-.skin .month{
+.month {
     border-collapse: collapse;
     border-spacing: 0;
     empty-cells: show;
     border: 1px solid #0f131f;
 }
 
-.skin .weekend{
+.weekend {
     color: red;
+}
+
+.even {
+    background-color: #3355BA;
+}
+
+.odd {
+    background-color: #0f131f;
 }
